@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Scheduler</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="firebase.js"></script>
+    <script src="index.js"></script>
+
+</head>
+<body>
+
+<table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th>Name(s)</th>
+        <th>Resume(s)</th>
+        <th>Tuesday 3:40</th>
+        <th>Tuesday 3:55</th>
+        <th>Tuesday 4:10</th>
+        <th>Tuesday 4:25</th>
+        <th>Tuesday 4:40</th>
+        <th>Thursday 3:40</th>
+        <th>Thursday 3:55</th>
+        <th>Thursday 4:10</th>
+        <th>Thursday 4:25</th>
+        <th>Thursday 4:40</th>
+    </tr>
+    </thead>
+    <!--<tfoot>-->
+    <!--<tr>-->
+    <!--<th>Name</th>-->
+    <!--<th>Position</th>-->
+    <!--<th>Office</th>-->
+    <!--<th>Age</th>-->
+    <!--<th>Start date</th>-->
+    <!--<th>Salary</th>-->
+    <!--</tr>-->
+    <!--</tfoot>-->
+    <tbody id="body">
+    </tbody>
+</table>
+
+<div id="popupContact" style="display: none" class="popup">
+    <form action="#" id="form" method="post" name="form">
+        <img id="close" src="images/3.png" onclick="div_hide()">
+        <h2 id="team_contact">sajkldjsa</h2>
+        <hr>
+        <a id="submit">Yes</a>
+    </form>
+</div>
+
+
+<div id="popupAccept" style="display: none" class="popup">
+    <form action="#" id="formAccept" method="post" name="form">
+        <img id="closeAccept" src="images/3.png" onclick="div_hide()">
+        <h2 id="meeting_accept">sajkldjsa</h2>
+
+        <a id="accept_cancel">Yes</a>
+        <br>
+        <a id="deny">No</a>
+
+    </form>
+</div>
+
+<div id="login_popup" style="display: none" class="popup">
+    <form action="#" id="loginForm" method="post" name="form">
+        <img id="closeLogin" src="images/3.png" onclick="div_hide()">
+        <p id="login_text">Login to accept, deny, or request an interview.</p>
+        Email:
+        <br>
+        <input type="email" name="email_login">
+        <br>
+        Password
+        <br>
+        <input type="password" name="password_login">
+        <br>
+        <a id="login_button">Login</a>
+    </form>
+</div>
+
+<div id="createTeam" style="display: none" class="popup">
+    <form action="#" id="createForm" method="post" name="form">
+        <img id="closeCreate" src="images/3.png" onclick="div_hide()">
+        Name: <br>
+        <input type="text" name="name[]"> <br>
+
+        Resume: <br>
+        <input type="url" name="resume[]"><br>
+
+        <div id="other"></div>
+        <br>
+        Already have a team?
+        <a id="addTeamMember">Add other person</a>
+        <br><br>
+
+        Primary Email (If more than one member, please put the email for the person in charge of scheduling):
+        <input type="email" name="primaryEmail">
+
+        <br>
+
+        Password:
+        <input type="password" name="createPassword">
+
+        <br><br>
+        <a id="create_team_button" type="button">Submit</a>
+
+    </form>
+</div>
+
+<a id="login">Log in</a>
+<a id="add"> Add Yourself! </a>
+</body>
+</html>
